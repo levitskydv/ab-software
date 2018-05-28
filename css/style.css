@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Harabara';
+  src: url("../fonts/Harabara.eot");
+  src: url("../fonts/Harabara.eot?#iefix") format("embedded-opentype"), url("../fonts/Harabara.woff") format("woff"), url("../fonts/Harabara.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  padding-top: 117px;
+  background-color: #202930;
+}
+
+a {
+  color: #fdab37;
+}
+
+.top_banner {
+  height: 472px;
+  position: relative;
+  background-image: url(../img/top_bg_2.png);
+}
+
+.top_banner .top_overlay {
+  background-image: url(../img/top_bg_glow.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+header {
+  height: 121px;
+  width: 100%;
+  background-image: url(../img/top_mnu.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  margin-top: 28px;
+  display: block;
+}
+
+.mnu_top {
+  float: right;
+}
+
+.mnu_top a {
+  font-family: Harabara, Arial, sans-serif;
+  font-size: 19px;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.6) 1px 2px;
+}
+
+.mnu_top li {
+  float: left;
+  padding: 72px 26px 0 26px;
+}
+
+.mnu_top li.active a {
+  color: #fdab37;
+}
