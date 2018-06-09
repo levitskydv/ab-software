@@ -28,6 +28,7 @@ a {
   height: 100%;
   background-repeat: no-repeat;
   background-position: top center;
+  top: 0;
 }
 
 header {
@@ -58,9 +59,40 @@ header {
 
 .mnu_top li {
   float: left;
-  padding: 72px 26px 0 26px;
+  position: relative;
 }
 
-.mnu_top li.active a {
+.mnu_top li:last-child {
+  background-image: url(../img/separate.png);
+  background-repeat: repeat-y;
+  background-position: top right;
+}
+
+.mnu_top li a {
+  background-image: url(../img/separate.png);
+  display: block;
+  padding: 72px 26px 24px 26px;
+  background-repeat: repeat-y;
+}
+
+.mnu_top li.active a, .mnu_top li:hover a {
   color: #fdab37;
+}
+
+.mnu_top .top_hover {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -4px;
+  width: 0;
+  left: 50%;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.mnu_top li.active .top_hover, .mnu_top li:hover .top_hover {
+  background-color: #FDB146;
+  width: 100%;
+  left: 0;
 }
