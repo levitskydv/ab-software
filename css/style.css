@@ -1,98 +1,375 @@
+/* ---------- Подключение шрифтов ----------*/
 @font-face {
-  font-family: 'Harabara';
-  src: url("../fonts/Harabara.eot");
-  src: url("../fonts/Harabara.eot?#iefix") format("embedded-opentype"), url("../fonts/Harabara.woff") format("woff"), url("../fonts/Harabara.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
+	font-family: 'Harabara';
+	src: url('../fonts/Harabara.eot');
+	src: url('../fonts/Harabara.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Harabara.woff') format('woff'),
+		 url('../fonts/Harabara.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
 }
 
+/* ---------- Общие стили ----------*/
 body {
-  padding-top: 117px;
-  background-color: #202930;
+	padding-top: 117px;
+	background-color: #202938;
+	color: #fff;
+	font: 14px Arial, sans-serif;
 }
-
 a {
-  color: #fdab37;
+	color: #fff;
+}
+a, a:focus, button, button:focus {
+    outline: 0
 }
 
+/* ---------- Главная область с баннером --- НАЧАЛО ----------*/
+#info > div:not(:first-child),
+#home > div:not(:first-child),
+.presentation > div > div:nth-child(n+4) {
+	display: none;
+}
+.slider-for {
+	margin: 0 auto;
+	width: 960px;
+}
 .top_banner {
-  height: 472px;
-  position: relative;
-  background-image: url(../img/top_bg_2.png);
+	height: 374px;
+	position: relative;
+	background: url(../img/top_bg_2.png);
+	padding: 100px 0 0;
+	font: 22px 'Harabara', Arial, sans-serif;
 }
-
-.top_banner .top_overlay {
-  background-image: url(../img/top_bg_glow.png);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: top center;
-  top: 0;
+.top_banner h2 {
+	color: #f99e0f;
+	font-size: 48px;
+	text-shadow: rgba(0, 0, 0, .6) 1px 4px;
 }
+.top_banner ul {
+	margin: 30px 0 70px;
+}
+.top_banner li {
+	background: url(../img/check.png) no-repeat 5px center;
+	padding: 3px 3px 3px 35px;
+	border: 2px solid transparent;
+	cursor: default;
+	-webkit-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.top_banner li:hover {
+	border-color: rgba(255, 255, 255, .3);
+}
+.slider_photo img {
+	border-radius: 20px;
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,1);
+	box-shadow: 5px 5px 5px 0px rgba(0,0,0,1);
+}
+/* Вкладки в навигационном меню (Software, Downloads, Contact us) --- НАЧАЛО --- */
+#software a, #downloads a {
+	display: block;
+	padding-bottom: 20px;
+	text-decoration: none;
+	font: 17px Arial;
+	clear: both;
+	line-height: 30px;
+}
+#software img {
+	float: left;
+	clear: both;
+	padding-right: 15px;
+}
+#downloads a div {
+	margin-left: 20px;
+	padding: 15px 25px;
+	font: bold 20px Arial;
+	color: #000;
+	text-shadow: 0 0 2px #fff;
+	border: 7px outset #fff;
+	border-radius: 15px;
+	background: #fcac1e;
+	display: inline-block;
+}
+#downloads a div:hover {
+	-webkit-box-shadow: 0 0 1px 1px #fff inset;
+	box-shadow: 0 0 5px 1px #fff inset;
+	-webkit-transition: all 0.1s ease-out;
+	-o-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+	cursor: pointer;
+}
+#downloads a div:active {
+	border-style: inset;
+	-webkit-transform: translateY(2px);
+	-ms-transform: translateY(2px);
+	-o-transform: translateY(2px);
+	transform: translateY(2px);
+}
+#contacts label {
+	display: block;
+	padding-bottom: 10px;
+}
+.form_first_part {
+	padding-left: 50px;
+	box-sizing: border-box;
+}
+input[type='text'], input[type='email'] {
+	float: right;
+	width: 250px;
+	height: 27px;
+	margin: 0 50px 0 25px;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+input[type='checkbox'] {
+	float: right;
+	margin-right: 285px;
+}
+input[type='submit'] {
+	padding: 10px 25px;
+	border: 4px outset #fff;
+	border-radius: 5px;
+	font: bold 22px Arial;
+	margin-right: 25px;
+}
+input[type='submit']:active {
+	border-style: inset;
+	-webkit-transform: translateY(2px);
+	-ms-transform: translateY(2px);
+	-o-transform: translateY(2px);
+	transform: translateY(2px);
+}
+input[type='reset'] {
+	padding: 5px 10px;
+	font-weight: bold;
+}
+.text_input {
+	text-align: right;
+}
+.input_file {
+	letter-spacing: 2px;
+}
+legend {
+	padding-bottom: 7px;
+	letter-spacing: 2px;
+}
+textarea {
+	resize: none;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+/* Вкладки в навигационном меню (Software, Downloads, Contact us) --- КОНЕЦ --- */
 
+/* ---------- Главная область с баннером --- КОНЕЦ ----------*/
+
+/* Фон на главной секции --- НАЧАЛО --- */
+.top_overlay {
+	background: url(../img/top_bg_glow.png) no-repeat top center;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 117px;
+	z-index: -1;
+}
+/* Фон на главной секции --- КОНЕЦ --- *
+
+/* ---------- Header --- НАЧАЛО ----------*/
 header {
-  height: 121px;
-  width: 100%;
-  background-image: url(../img/top_mnu.png);
-  position: absolute;
-  top: 0;
-  left: 0;
+	height: 121px;
+	background: url(../img/top_mnu.png);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-
 .logo {
-  margin-top: 28px;
-  display: block;
+	margin-top: 28px;
+	display: block;
+}
+.menu_top {
+	float: right;
+}
+.menu_top li {
+	float: left;
+	position: relative;
+}
+.menu_top a {
+	display: block;
+	font: 19px 'Harabara', Arial, sans-serif;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, .6) 1px 2px;
+	padding: 72px 26px 24px;
+	background: url(../img/separate.png) repeat-y;
+}
+.menu_top li:last-child {
+	background: url(../img/separate.png) repeat-y top right;
+}
+.active a, .menu_top a:hover {
+	color: #fdab37;
+}
+.top_hover {
+	position: absolute;
+	width: 0;
+	height: 4px;
+	bottom: -4px;
+	left: 50%;
+	-webkit-transition: all .35s ease-out;
+	-o-transition: all .35s ease-out;
+	transition: all .35s ease-out;
+}
+.active .top_hover,
+.menu_top li:hover .top_hover
+ {
+	background: #fdb146;
+	width: 100%;
+	left: 0;
+}
+/* ---------- Header --- КОНЕЦ ----------*/
+
+/* ---------- Секция с кнопкой-переключателем --- НАЧАЛО ----------*/
+.toggle_button_container {
+	position: relative;
+	height: 34px;
+	background: url(../img/line-shadow.png) repeat-x;
+	z-index: 100;
+}
+.toggle_button {
+	position: absolute;
+	top: -20px;
+	background: #ec9a14 url(../img/slider_g.png) no-repeat 60px 0;
+	background-size: 100% 100%;
+	width: 540px;
+	height: 80px;
+	border-top: 1px solid #ffd781;
+	border-bottom: 1px solid #e89410;
+	border-radius: 7px;
+}
+.toggle_button>span {
+	position: absolute;
+	width: 60px;
+	height: 83px;
+	background: url(../img/slider_elements.png) no-repeat;
+}
+.toggle_button>span:hover {
+	cursor: pointer;
+}
+span.arrow_prev {
+	left: -60px;
+	background-position: left top;
+}
+span.arrow_next {
+	right: -60px;
+	top: 0;
+	background-position: right top;
+}
+.toggle_button h3 {
+	float: left;
+	font: 50px Arial, Verdana, sans-serif;
+	padding: 10px 0 0 10px;
+}
+.toggle_button h3 span {
+	font-size: 18px;
+	padding-right: 5px;
+}
+.toggle_button h4 {
+	font: 22px Arial;
+	padding: 15px 0 0 5px;
+	text-shadow: rgba(0, 0, 0, .5) 1px 1px;
+}
+.toggle_button p {
+	padding: 2px 0 0 5px;
+}
+.toggle_button div {
+	overflow: hidden;
+	display: block;
+	height: 80px;
+}
+/* ---------- Секция с кнопкой-переключателем --- КОНЕЦ ----------*/
+
+/* ---------- Секция презентации (Our programmers и т.д.) --- НАЧАЛО ---------- */
+.presentation_container {
+	background: url(../img/pres_bg.png);
+	background-size: cover;
+	position: relative;
+	top: -11px;
+	padding: 59px 24px 40px;
+}
+.presentation {
+	background: #272626;
+	text-align: center;
+	-webkit-box-shadow: 0px 6px 15px -4px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 6px 15px -4px rgba(0,0,0,1);
+	box-shadow: 0px 6px 15px -4px rgba(0,0,0,1);
+	overflow: hidden;
+}
+.presentation img {
+	padding-top: 33px; 
+}
+.presentation h3 {
+	padding-top: 20px;
+	font: 19px Arial;
+	text-transform: uppercase;
+}
+.presentation p {
+	color: #919191;
+	padding: 5px 0 38px 0;
 }
 
-.mnu_top {
-  float: right;
-}
+/* ---------- Секция презентации (Our programmers ...) --- КОНЕЦ ---------- */
 
-.mnu_top a {
-  font-family: Harabara, Arial, sans-serif;
-  font-size: 19px;
-  text-decoration: none;
-  color: #fff;
-  text-shadow: rgba(0, 0, 0, 0.6) 1px 2px;
+/* ---------- FOOTER --- НАЧАЛО ----------*/
+footer {
+	background: url(../img/footer_bg.png);
+	margin-top: -11px;
+	padding: 39px 0 50px;
 }
-
-.mnu_top li {
-  float: left;
-  position: relative;
+.copyright {
+	opacity: 0.2;
 }
-
-.mnu_top li:last-child {
-  background-image: url(../img/separate.png);
-  background-repeat: repeat-y;
-  background-position: top right;
+.copyright h3 {
+	font-size: 42px;
+	margin-bottom: -5px;
 }
-
-.mnu_top li a {
-  background-image: url(../img/separate.png);
-  display: block;
-  padding: 72px 26px 24px 26px;
-  background-repeat: repeat-y;
+.copyright p {
+	font-size: 12px;
 }
-
-.mnu_top li.active a, .mnu_top li:hover a {
-  color: #fdab37;
+.copyright p a {
+	font-size: 12px;
+	display: inline-block;
+	padding: 0;
+	color: #fff;
+	text-decoration: none;
 }
-
-.mnu_top .top_hover {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: -4px;
-  width: 0;
-  left: 50%;
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
+.copyright p a:hover {
+	text-decoration: underline;
 }
-
-.mnu_top li.active .top_hover, .mnu_top li:hover .top_hover {
-  background-color: #FDB146;
-  width: 100%;
-  left: 0;
+footer li {
+	display: inline-block;
 }
+footer a {
+	color: #626e76;
+	padding: 17px 25px;
+	display: block;
+	font: 18px Arial;
+}
+footer a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+footer .active a {
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	background: rgb(253,185,40);
+	background: -moz-linear-gradient(top,  rgba(253,185,40,1) 0%, rgba(232,148,15,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(253,185,40,1) 0%,rgba(232,148,15,1) 100%);
+	background: linear-gradient(to bottom,  rgba(253,185,40,1) 0%,rgba(232,148,15,1) 100%);
+	text-shadow: rgba(0, 0, 0, .5) 1px 1px;
+	-webkit-box-shadow: 0px 3px 5px -2px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 3px 5px -2px rgba(0,0,0,1);
+	box-shadow: 0px 3px 5px -2px rgba(0,0,0,1);
+}
+/* ---------- FOOTER --- КОНЕЦ ----------*/
